@@ -18,11 +18,17 @@
     .input-search {
         // height: 50px;
         width: 300px;
+        margin-right: 0px!important;
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     .btn-search {
         border-color: $main-color;
         color: $main-color;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
         
         &:hover, &:focus, &:active {
             color: #fff;            

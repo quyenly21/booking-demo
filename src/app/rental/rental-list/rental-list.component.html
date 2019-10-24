@@ -1,7 +1,7 @@
 <div class="container">
     <section id="rentalListing">
         <h2 class="title">Your Home All Around the World</h2>
-        <div class="row">
+        <div class="row" infinite-scroll (scrolled)="onScrollDown()">
             <div class="col-md-3 col-xs-6" *ngFor="let rental of rentals">
                 <booking-rental-list-item [rental]=rental></booking-rental-list-item>
             </div>            
