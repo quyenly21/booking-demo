@@ -8,6 +8,11 @@ a {
 }
 .booking-card {
     border: none;
+    margin-bottom: 40px;
+    transition: top ease 0.6;
+    &:hover {
+        top: -5px;
+    }
 
     .card-block {
         padding-top: 8px;
@@ -16,8 +21,7 @@ a {
             margin: 0;
             font-weight: 500;
             font-size: 12px;
-            text-transform: uppercase;
-            color: #16861a;
+            text-transform: uppercase;            
         }
 
         .card-title {

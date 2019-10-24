@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { RentalService } from './shared/rental.service';
 import { Routes, RouterModule } from '@angular/router';
 import { RentalDetailComponent } from './rental-detail/rental-detail.component';
+import { HttpClientModule} from '@angular/common/http';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 const routesRental: Routes = [
     {
@@ -32,9 +34,11 @@ const routesRental: Routes = [
         RentalComponent,
         RentalDetailComponent
     ],
-    imports: [ 
+    imports: [         
+        InfiniteScrollModule,
         CommonModule,
-        RouterModule.forChild(routesRental)        
+        RouterModule.forChild(routesRental),
+        HttpClientModule
     ],
     exports: [RouterModule],
     providers: [
