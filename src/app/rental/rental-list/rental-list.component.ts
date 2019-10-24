@@ -8,22 +8,30 @@ import { RentalService } from '../shared/rental.service';
   providers: [RentalService]
 })
 export class RentalListComponent implements OnInit {
+  pageNum = 1;
   rentals: any[] = [];
-  
+
   constructor(private rentalService: RentalService) { }
   
   ngOnInit() {   
-    // this.rentals = this.rentalService.getRentals();
-    const rentalObservable = this.rentalService.getRentals();
+    this.getRentals(this.pageNum);
+  }
+
+  getRentals(page) {
+    const rentalObservable = this.rentalService.getRentals(page);
     rentalObservable.subscribe(
       (rental) => {
-        this.rentals = rental;
+        this.rentals = this.rentals.concat(rental);        
       },
       (err) => {
         console.log("Error - Rental list component: ", err);
       },
       ()=> {}
     )
+  }
+  onScrollDown() {
+    this.pageNum++;
+    this.getRentals(this.pageNum);
   }
 
 }

@@ -19,8 +19,8 @@ export class RentalService {
     // }) 
   }
 
-  public getRentals(): Observable<any>{
-    return this.http.get(`${environment.API_URL}/rentals`)
+  public getRentals(page, limit= 8): Observable<any>{
+    return this.http.get(`${environment.API_URL}/rentals?page=${page}&limit=${limit}`)
     // const rentalObservable = new Observable((observer) => {
     //   setTimeout(()=> {
     //     // debugger;
