@@ -1,7 +1,7 @@
 
 <a routerLink="/rentals/{{rental.id}}">
     <div class="card booking-card">
-        <img class="card-img-top" src="https://images1.apartments.com/i2/P0s3lHrhIIPXfyhkVz0wMZXOqFj2m3Rg_Pa-OdKQIQk/111/the-500-atlanta-ga-refined-apartment-living---elite-upgrade.jpg" alt="">
+        <img class="card-img-top" src="{{rental.image}}" alt="">
         <div class="card-block">
         <div class="card-subtitle {{rental.category}}">{{rental.shared ? "shared" : "whole"}} {{rental.category}} &#183; {{rental.city}}</div>
         <a class="card-title">{{rental.title}}</a>
